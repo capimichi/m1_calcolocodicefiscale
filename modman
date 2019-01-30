@@ -3,3 +3,5 @@
 app/code/local/Capimichi/CalcoloCodiceFiscale            app/code/local/Capimichi/CalcoloCodiceFiscale
 # app/etc
 app/etc/modules/Capimichi_CalcoloCodiceFiscale.xml            app/etc/modules/Capimichi_CalcoloCodiceFiscale.xml
+# app/design
+app/design/frontend/default/default/capimichi/calcolo_codice_fiscale/calculator.phtml            app/design/frontend/default/default/capimichi/calcolo_codice_fiscale/calculator.phtml
