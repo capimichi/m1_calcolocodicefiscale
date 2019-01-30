@@ -1,6 +1,6 @@
 {
     "name": "capimichi/m1_calcolocodicefiscale",
-    "description": "Magento 1 import / export",
+    "description": "Magento 1 calcolo codice fiscale",
     "type": "magento-module",
     "authors": [
         {
