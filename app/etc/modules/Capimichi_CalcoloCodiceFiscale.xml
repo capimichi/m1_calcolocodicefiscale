@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Capimichi_CalcoloCodiceFiscale>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Capimichi_CalcoloCodiceFiscale>
+    </modules>
+</config>

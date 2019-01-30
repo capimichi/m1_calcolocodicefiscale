@@ -1,0 +1,10 @@
+{
+    "name": "capimichi/m1_calcolocodicefiscale",
+    "description": "Magento 1 import / export",
+    "type": "magento-module",
+    "authors": [
+        {
+            "name": "Michele Capicchioni"
+        }
+    ]
+}

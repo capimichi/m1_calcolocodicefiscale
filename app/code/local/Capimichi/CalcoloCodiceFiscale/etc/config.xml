@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Capimichi_CalcoloCodiceFiscale>
+            <version>0.1.0</version>
+        </Capimichi_CalcoloCodiceFiscale>
+    </modules>
+
+
+    <global>
+        <helpers>
+            <calcolocodicefiscale>
+                <class>Capimichi_CalcoloCodiceFiscale_Helper</class>
+            </calcolocodicefiscale>
+        </helpers>
+    </global>
+
+
+    <admin>
+        <routers>
+            <calcolocodicefiscale>
+                <use>admin</use>
+                <args>
+                    <module>Capimichi_CalcoloCodiceFiscale</module>
+                    <frontName>calcolocodicefiscale</frontName>
+                </args>
+            </calcolocodicefiscale>
+        </routers>
+    </admin>
+
+</config>
