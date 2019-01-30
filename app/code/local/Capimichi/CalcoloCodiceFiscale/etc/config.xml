@@ -14,8 +14,12 @@
                 <class>Capimichi_CalcoloCodiceFiscale_Helper</class>
             </calcolocodicefiscale>
         </helpers>
+        <blocks>
+            <calcolocodicefiscale>
+                <class>Capimichi_CalcoloCodiceFiscale_Block</class>
+            </calcolocodicefiscale>
+        </blocks>
     </global>
-
 
     <admin>
         <routers>
