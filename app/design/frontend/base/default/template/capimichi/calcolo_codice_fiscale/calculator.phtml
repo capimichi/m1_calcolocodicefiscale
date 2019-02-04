@@ -1,11 +1,50 @@
 <form>
 
     <div class="cdf-form-control">
-        <label><?php echo $this->__('Firstname'); ?> <input type="text" name="name"/></label>
+        <label class="block-label">Nome <input type="text" name="name"/></label>
     </div>
 
     <div class="cdf-form-control">
-        <label><?php echo $this->__('Lastname'); ?> <input type="text" name="name"/></label>
+        <label class="block-label">Cognome <input type="text" name="name"/></label>
+    </div>
+
+    <div class="cdf-form-control">
+        <label class="block-label">
+            Comune
+            <select>
+                <option>-</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="cdf-form-control">
+        <label class="">
+            Giorno nascita
+            <select>
+                <option>-</option>
+                <?php foreach (range(1, 31) as $day) : ?>
+                    <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </label>
+        <label class="">
+            Mese nascita
+            <select>
+                <option>-</option>
+                <?php foreach (range(1, 12) as $day) : ?>
+                    <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </label>
+        <label class="">
+            Anno nascita
+            <select>
+                <option>-</option>
+                <?php foreach (range(1900, date("Y")) as $day) : ?>
+                    <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </label>
     </div>
 
 </form>
