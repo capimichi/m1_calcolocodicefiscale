@@ -18,8 +18,9 @@
     </div>
 
     <div class="cdf-form-control">
+        <label class="block-label">Nascita</label>
         <label class="">
-            Giorno nascita
+            Giorno
             <select>
                 <option>-</option>
                 <?php foreach (range(1, 31) as $day) : ?>
@@ -27,8 +28,9 @@
                 <?php endforeach; ?>
             </select>
         </label>
+        &nbsp;
         <label class="">
-            Mese nascita
+            Mese
             <select>
                 <option>-</option>
                 <?php foreach (range(1, 12) as $day) : ?>
@@ -36,13 +38,24 @@
                 <?php endforeach; ?>
             </select>
         </label>
+        &nbsp;
         <label class="">
-            Anno nascita
+            Anno
             <select>
                 <option>-</option>
                 <?php foreach (range(1900, date("Y")) as $day) : ?>
                     <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
                 <?php endforeach; ?>
+            </select>
+        </label>
+    </div>
+
+    <div class="cdf-form-control">
+        <label class="block-label">
+            Sesso
+            <select>
+                <option value="M">M</option>
+                <option value="F">F</option>
             </select>
         </label>
     </div>
