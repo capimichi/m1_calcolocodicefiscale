@@ -1,16 +1,16 @@
 <form id="fiscal-code-calculator">
     <div class="cdf-form-control">
-        <label class="block-label">Nome <input class="name" type="text" name="name"/></label>
+        <label class="block-label">Nome <input class="form-control name" type="text" name="name"/></label>
     </div>
 
     <div class="cdf-form-control">
-        <label class="block-label">Cognome <input class="lastname" type="text" name="name"/></label>
+        <label class="block-label">Cognome <input class="form-control lastname" type="text" name="name"/></label>
     </div>
 
     <div class="cdf-form-control">
         <label class="block-label">
             Comune
-            <select class="common">
+            <select class="form-control common">
                 <?php foreach ($this->getCommons() as $common) : ?>
                     <option value="<?php echo $common; ?>"><?php echo $common; ?></option>
                 <?php endforeach; ?>
@@ -22,7 +22,7 @@
         <label class="block-label">Nascita</label>
         <label class="">
             Giorno
-            <select class="day">
+            <select class="form-control day">
                 <option>-</option>
                 <?php foreach (range(1, 31) as $day) : ?>
                     <option value="<?php printf("%02d", $day); ?>"><?php printf("%02d", $day); ?></option>
@@ -32,7 +32,7 @@
         &nbsp;
         <label class="">
             Mese
-            <select class="month">
+            <select class="form-control month">
                 <option>-</option>
                 <?php foreach (range(1, 12) as $month) : ?>
                     <option value="<?php printf("%02d", $month); ?>"><?php printf("%02d", $month); ?></option>
@@ -42,7 +42,7 @@
         &nbsp;
         <label class="">
             Anno
-            <select class="year">
+            <select class="form-control year">
                 <option>-</option>
                 <?php foreach (range(1900, date("Y")) as $year) : ?>
                     <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
@@ -54,7 +54,7 @@
     <div class="cdf-form-control">
         <label class="block-label">
             Sesso
-            <select class="gender">
+            <select class="form-control gender">
                 <option value="M">M</option>
                 <option value="F">F</option>
             </select>
