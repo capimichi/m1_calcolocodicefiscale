@@ -2,6 +2,7 @@
 
 class Capimichi_CalcoloCodiceFiscale_Block_Calculator extends Mage_Core_Block_Template
 {
+    const CALCULATE_ENDPOINT   = "http://webservices.dotnethell.it/codicefiscale.asmx/CalcolaCodiceFiscale?Nome={name}&Cognome={lastname}&ComuneNascita={common}&DataNascita={birthday}&Sesso={gender}";
     const COMUNI_JSON_ENDPOINT = "https://raw.githubusercontent.com/capimichi/m1_calcolocodicefiscale/master/comuni.json";
     
     public function getCommons()
@@ -15,6 +16,11 @@ class Capimichi_CalcoloCodiceFiscale_Block_Calculator extends Mage_Core_Block_Te
             }
         }
         return [];
+    }
+    
+    public function getCalculateUrl()
+    {
+        return self::CALCULATE_ENDPOINT;
     }
     
 }
