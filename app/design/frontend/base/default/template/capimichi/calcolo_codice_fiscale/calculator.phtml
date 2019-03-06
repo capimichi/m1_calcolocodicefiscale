@@ -10,10 +10,8 @@
     <div class="cdf-form-control">
         <label class="block-label">
             Comune
-            <select class="form-control common">
-                <?php foreach ($this->getCommons() as $common) : ?>
-                    <option value="<?php echo $common; ?>"><?php echo $common; ?></option>
-                <?php endforeach; ?>
+            <select>
+                <option>-</option>
             </select>
         </label>
     </div>
@@ -22,30 +20,30 @@
         <label class="block-label">Nascita</label>
         <label class="">
             Giorno
-            <select class="form-control day">
+            <select>
                 <option>-</option>
                 <?php foreach (range(1, 31) as $day) : ?>
-                    <option value="<?php printf("%02d", $day); ?>"><?php printf("%02d", $day); ?></option>
+                    <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
                 <?php endforeach; ?>
             </select>
         </label>
         &nbsp;
         <label class="">
             Mese
-            <select class="form-control month">
+            <select>
                 <option>-</option>
-                <?php foreach (range(1, 12) as $month) : ?>
-                    <option value="<?php printf("%02d", $month); ?>"><?php printf("%02d", $month); ?></option>
+                <?php foreach (range(1, 12) as $day) : ?>
+                    <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
                 <?php endforeach; ?>
             </select>
         </label>
         &nbsp;
         <label class="">
             Anno
-            <select class="form-control year">
+            <select>
                 <option>-</option>
-                <?php foreach (range(1900, date("Y")) as $year) : ?>
-                    <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                <?php foreach (range(1900, date("Y")) as $day) : ?>
+                    <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
                 <?php endforeach; ?>
             </select>
         </label>
