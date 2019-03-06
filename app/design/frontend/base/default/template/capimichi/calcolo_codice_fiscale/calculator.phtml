@@ -12,6 +12,9 @@
             Comune
             <select>
                 <option>-</option>
+                <?php foreach ($this->getCommons() as $common) : ?>
+                    <option value="<?php echo $common; ?>"><?php echo $common; ?></option>
+                <?php endforeach; ?>
             </select>
         </label>
     </div>
