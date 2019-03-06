@@ -26,7 +26,7 @@
             <select class="day">
                 <option>-</option>
                 <?php foreach (range(1, 31) as $day) : ?>
-                    <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
+                    <option value="<?php echo sprintf("%02d", $day); ?>"><?php echo sprintf("%02d", $day); ?></option>
                 <?php endforeach; ?>
             </select>
         </label>
@@ -36,7 +36,7 @@
             <select class="month">
                 <option>-</option>
                 <?php foreach (range(1, 12) as $day) : ?>
-                    <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
+                    <option value="<?php echo sprintf("%02d", $day); ?>"><?php echo sprintf("%02d", $day); ?></option>
                 <?php endforeach; ?>
             </select>
         </label>
@@ -45,7 +45,7 @@
             Anno
             <select class="year">
                 <option>-</option>
-                <?php foreach (range(1900, date("Y")) as $day) : ?>
+                <?php foreach (range(1930, date("Y")) as $day) : ?>
                     <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
                 <?php endforeach; ?>
             </select>
