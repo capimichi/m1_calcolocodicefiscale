@@ -23,7 +23,7 @@
         <label class="block-label">Nascita</label>
         <label class="">
             Giorno
-            <select>
+            <select class="day">
                 <option>-</option>
                 <?php foreach (range(1, 31) as $day) : ?>
                     <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
@@ -33,7 +33,7 @@
         &nbsp;
         <label class="">
             Mese
-            <select>
+            <select class="month">
                 <option>-</option>
                 <?php foreach (range(1, 12) as $day) : ?>
                     <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
@@ -43,7 +43,7 @@
         &nbsp;
         <label class="">
             Anno
-            <select>
+            <select class="year">
                 <option>-</option>
                 <?php foreach (range(1900, date("Y")) as $day) : ?>
                     <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
