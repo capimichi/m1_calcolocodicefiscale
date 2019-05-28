@@ -1,0 +1,47 @@
+<?php
+$fiscalCodeSelector = $this->getData('fiscal_code_selector');
+
+var_dump($fiscalCodeSelector);
+?>
+
+<script>
+    var $ccf = window.$ccf || jQuery.noConflict();
+
+    $ccf(document).ready(function () {
+
+        //var $form = $ccf("#fiscal-code-calculator");
+        //var $calculateTemplateUrl = "<?php //echo $this->getCalculateUrl(); ?>//";
+        //
+        //$form.find(".submit").on("click", function (e) {
+        //
+        //    var $calculateUrl = $calculateTemplateUrl;
+        //    $calculateUrl = $calculateUrl.replace(/{name}/g, $form.find(".name").val());
+        //    $calculateUrl = $calculateUrl.replace(/{lastname}/g, $form.find(".lastname").val());
+        //    $calculateUrl = $calculateUrl.replace(/{common}/g, $form.find(".common").val());
+        //    $calculateUrl = $calculateUrl.replace(/{birthday}/g,
+        //        [
+        //            $form.find(".day").val(),
+        //            $form.find(".month").val(),
+        //            $form.find(".year").val()
+        //        ].join('/')
+        //    );
+        //    $calculateUrl = $calculateUrl.replace(/{gender}/g, $form.find(".gender").val());
+        //
+        //    console.log($calculateUrl);
+        //
+        //    $ccf.ajax({
+        //        url: $calculateUrl,
+        //        method: 'get',
+        //        success: function (response) {
+        //            var $code = new XMLSerializer().serializeToString(response).replace(/(<([^>]+)>)/ig, "");
+        //            alert($code);
+        //        },
+        //        error: function (response) {
+        //            alert("Errore");
+        //        }
+        //    });
+        //
+        //    e.preventDefault();
+        //});
+    });
+</script>
