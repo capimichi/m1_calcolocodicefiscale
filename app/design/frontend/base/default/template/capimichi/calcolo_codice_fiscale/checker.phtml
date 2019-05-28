@@ -1,13 +1,28 @@
 <?php
 $fiscalCodeSelector = $this->getData('fiscal_code_selector');
 
-var_dump($fiscalCodeSelector);
 ?>
 
 <script>
     var $ccf = window.$ccf || jQuery.noConflict();
 
     $ccf(document).ready(function () {
+
+        jQuery("body").on("input", "<?php echo $fiscalCodeSelector; ?>", function () {
+
+            var $input = jQuery(this);
+
+            var $url = "<?php echo $this->getCheckUrl(); ?>";
+            $url = $url.replace(/{fiscalcode}/g, $input.val());
+
+            jQuery.ajax({
+                url: $url,
+                method: 'get',
+                success: function (r) {
+                    console.log(r);
+                }
+            })
+        });
 
         //var $form = $ccf("#fiscal-code-calculator");
         //var $calculateTemplateUrl = "<?php //echo $this->getCalculateUrl(); ?>//";
