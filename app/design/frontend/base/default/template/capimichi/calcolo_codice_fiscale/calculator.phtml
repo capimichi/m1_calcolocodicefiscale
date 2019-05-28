@@ -10,11 +10,12 @@
     <div class="cdf-form-control">
         <label class="block-label">
             Comune
-            <select class="common">
+            <select class="common cdf-common-input">
                 <option>-</option>
-                <?php foreach ($this->getCommons() as $common) : ?>
-                    <option value="<?php echo $common; ?>"><?php echo $common; ?></option>
-                <?php endforeach; ?>
+                <!--                --><?php //foreach ($this->getCommons() as $common) : ?>
+                <!--                    <option value="--><?php //echo $common; ?><!--">-->
+                <?php //echo $common; ?><!--</option>-->
+                <!--                --><?php //endforeach; ?>
             </select>
         </label>
     </div>
@@ -69,6 +70,20 @@
     var $ccf = window.$ccf || jQuery.noConflict();
 
     $ccf(document).ready(function () {
+
+        $ccf.ajax({
+            url: '/calcolocodicefiscale/index/commons',
+            success: function (r) {
+                var $commons = r.comuni;
+                for (var i = 0; i < $commons.length; i++) {
+                    var $common = $commons[i];
+                    $ccf(".cdf-common-input").append($ccf('<option>', {
+                        value: $common,
+                        text: $common
+                    }));
+                }
+            }
+        });
 
         var $form = $ccf("#fiscal-code-calculator");
         var $calculateTemplateUrl = "<?php echo $this->getCalculateUrl(); ?>";

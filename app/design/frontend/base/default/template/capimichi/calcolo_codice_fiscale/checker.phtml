@@ -8,20 +8,32 @@ $fiscalCodeSelector = $this->getData('fiscal_code_selector');
 
     $ccf(document).ready(function () {
 
-        jQuery("body").on("input", "<?php echo $fiscalCodeSelector; ?>", function () {
+        jQuery("body").on("input", "<?php echo str_replace('"', '\"', $fiscalCodeSelector); ?>", function () {
 
             var $input = jQuery(this);
+            var $form = $input.closest('form');
 
-            var $url = "<?php echo $this->getCheckUrl(); ?>";
-            $url = $url.replace(/{fiscalcode}/g, $input.val());
-
-            jQuery.ajax({
-                url: $url,
+            $ccf.ajax({
+                url: "/calcolocodicefiscale/index/check",
                 method: 'get',
+                data: {
+                    fiscalCode: $input.val(),
+                },
                 success: function (r) {
-                    console.log(r);
+                    if (r.status === 200) {
+                        $input.removeClass("invalid-fiscal");
+                        $form.removeClass("invalid-fiscal");
+                    } else {
+                        $input.addClass("invalid-fiscal");
+                        $form.addClass("invalid-fiscal");
+                    }
+                },
+                error: function () {
+                    $input.addClass("invalid-fiscal");
+                    $form.addClass("invalid-fiscal");
                 }
-            })
+            });
+
         });
 
         //var $form = $ccf("#fiscal-code-calculator");

@@ -33,4 +33,16 @@
         </routers>
     </admin>
 
+    <frontend>
+        <routers>
+            <routeurfrontend>
+                <use>standard</use>
+                <args>
+                    <module>Capimichi_CalcoloCodiceFiscale</module>
+                    <frontName>calcolocodicefiscale</frontName>
+                </args>
+            </routeurfrontend>
+        </routers>
+    </frontend>
+
 </config>
