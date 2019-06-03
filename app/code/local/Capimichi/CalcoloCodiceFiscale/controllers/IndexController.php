@@ -13,12 +13,15 @@ class Capimichi_CalcoloCodiceFiscale_IndexController extends Mage_Core_Controlle
         $url = self::COMUNI_JSON_ENDPOINT;
         $data = file_get_contents($url);
         echo $data;
+        
+        die();
     }
     
     public function calculateAction()
     {
         header('Content-Type: application/json');
         
+        die();
     }
     
     public function checkAction()
@@ -49,7 +52,7 @@ class Capimichi_CalcoloCodiceFiscale_IndexController extends Mage_Core_Controlle
             'status' => $status,
         ]);
         
-        
+        die();
     }
     
 }

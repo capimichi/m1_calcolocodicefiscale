@@ -1,12 +1,14 @@
 <?php
 $fiscalCodeSelector = $this->getData('fiscal_code_selector');
-
+$submitButtonSelector = $this->getData('submit_button_selector');
 ?>
 
 <script>
     var $ccf = window.$ccf || jQuery.noConflict();
 
     $ccf(document).ready(function () {
+
+        var $submitButton = jQuery("<?php echo str_replace('"', '\"', $submitButtonSelector); ?>");
 
         jQuery("body").on("input", "<?php echo str_replace('"', '\"', $fiscalCodeSelector); ?>", function () {
 
@@ -23,14 +25,17 @@ $fiscalCodeSelector = $this->getData('fiscal_code_selector');
                     if (r.status === 200) {
                         $input.removeClass("invalid-fiscal");
                         $form.removeClass("invalid-fiscal");
+                        $submitButton.removeAttr("disabled");
                     } else {
                         $input.addClass("invalid-fiscal");
                         $form.addClass("invalid-fiscal");
+                        $submitButton.attr("disabled", "disabled");
                     }
                 },
                 error: function () {
                     $input.addClass("invalid-fiscal");
                     $form.addClass("invalid-fiscal");
+                    $submitButton.attr("disabled", "disabled");
                 }
             });
 
