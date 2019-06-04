@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addJs">
+                <script>capimichi/calcolocodicefiscale/jquery.modal.min.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>capimichi/calcolocodicefiscale/css/calcolocodicefiscale.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>capimichi/calcolocodicefiscale/css/jquery.modal.min.css</name>
+            </action>
+            <action method="addJs">
+                <script>capimichi/calcolocodicefiscale/checker.js</script>
+            </action>
+        </reference>
+    </default>
+</layout>

@@ -34,14 +34,21 @@
     </admin>
 
     <frontend>
+        <!--<layout>-->
+        <!--<updates>-->
+        <!--<capimichi_calcolocodicefiscale>-->
+        <!--<file>capimichi_calcolocodicefiscale.xml</file>-->
+        <!--</capimichi_calcolocodicefiscale>-->
+        <!--</updates>-->
+        <!--</layout>-->
         <routers>
-            <routeurfrontend>
+            <calcolocodicefiscale>
                 <use>standard</use>
                 <args>
                     <module>Capimichi_CalcoloCodiceFiscale</module>
                     <frontName>calcolocodicefiscale</frontName>
                 </args>
-            </routeurfrontend>
+            </calcolocodicefiscale>
         </routers>
     </frontend>
 

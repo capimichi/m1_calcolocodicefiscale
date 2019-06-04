@@ -1,0 +1,8 @@
+.blocker {
+    z-index: 99999 !important;
+}
+
+.fiscal-code-calculator-modal {
+    overflow: visible;
+    border-radius: 0 !important;
+}

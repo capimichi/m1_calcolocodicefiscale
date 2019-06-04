@@ -1,0 +1,71 @@
+<div class="fiscal-code-calculator-modal">
+    <div id="fiscal-code-calculator">
+        <form>
+            <div class="cdf-form-control">
+                <label class="block-label">Nome <input name="firstname" class="form-control name" type="text"/></label>
+            </div>
+
+            <div class="cdf-form-control">
+                <label class="block-label">Cognome <input name="lastname" class="form-control lastname"
+                                                          type="text"/></label>
+            </div>
+
+            <div class="cdf-form-control">
+                <label class="block-label">
+                    Comune
+                    <select name="common" class="common cdf-common-input">
+                        <option>-</option>
+                        <!--                        --><?php //foreach ($this->getCommons() as $common) : ?>
+                        <!--                            <option value="--><?php //echo $common; ?><!--">-->
+                        <!--                                --><?php //echo $common; ?><!--</option>-->
+                        <!--                        --><?php //endforeach; ?>
+                    </select>
+                </label>
+            </div>
+
+            <div class="cdf-form-control">
+                <label class="">
+                    Giorno nascita
+                    <select name="day" class="day">
+                        <option>-</option>
+                        <?php foreach (range(1, 31) as $day) : ?>
+                            <option value="<?php echo sprintf("%02d", $day); ?>"><?php echo sprintf("%02d", $day); ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </label>
+                &nbsp;
+                <label class="">
+                    Mese nascita
+                    <select name="month" class="month">
+                        <option>-</option>
+                        <?php foreach (range(1, 12) as $day) : ?>
+                            <option value="<?php echo sprintf("%02d", $day); ?>"><?php echo sprintf("%02d", $day); ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </label>
+                &nbsp;
+                <label class="">
+                    Anno nascita
+                    <select name="year" class="year">
+                        <option>-</option>
+                        <?php foreach (range(1930, date("Y")) as $day) : ?>
+                            <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </label>
+            </div>
+
+            <div class="cdf-form-control">
+                <label class="block-label">
+                    Sesso
+                    <select name="gender" class="form-control gender">
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                    </select>
+                </label>
+            </div>
+
+            <button class="submit">Calcola</button>
+        </form>
+    </div>
+</div>

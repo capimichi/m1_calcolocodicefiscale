@@ -8,7 +8,11 @@ class Capimichi_CalcoloCodiceFiscale_Block_Calculator extends Mage_Core_Block_Te
     
     public function getCommons()
     {
-    
+        $url = self::COMUNI_JSON_ENDPOINT;
+        $data = file_get_contents($url);
+        $array = json_decode($data, true);
+        $commons = $array['comuni'];
+        return $commons;
     }
     
     public function getCalculateUrl()
