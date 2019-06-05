@@ -6,3 +6,12 @@
     overflow: visible;
     border-radius: 0 !important;
 }
+
+#fiscal-code-calculator .commons-hint span {
+    padding: 3px;
+    background: #d6d6d6;
+    font-size: 11px;
+    margin: 0 5px 5px 0;
+    display: inline-block;
+    cursor: pointer;
+}

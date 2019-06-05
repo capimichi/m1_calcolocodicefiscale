@@ -2,9 +2,26 @@ var $ccf = window.$ccf || jQuery.noConflict();
 
 $ccf(document).ready(function () {
 
-    var modal = null;
+    function updateCommonSearch(q) {
+        var hints = "";
+
+        if (q.length > 2) {
+            $ccf.each(commons, function (index, common) {
+
+                if (common.indexOf(q) >= 0) {
+                    var hintTemplate = "<span data-name='{common}'>{common}</span>";
+                    var hint = hintTemplate.replace(/{common}/g, common);
+                    hints += hint;
+                }
+            });
+        }
+
+        $ccf(".commons-hint").html(hints);
+    }
 
     var fiscalCodeInput = $ccf($ccf('#fiscal-code-calculator-open').data("fiscal-code-selector"));
+
+    var commons = [];
 
     $ccf('#fiscal-code-calculator-open').click(function (event) {
         this.blur();
@@ -12,21 +29,29 @@ $ccf(document).ready(function () {
         $ccf.ajax({
             url: '/calcolocodicefiscale/index/calculatemodal',
             success: function (html) {
-                modal = $ccf(html).appendTo('body').modal();
+                $ccf(html).appendTo('body').modal();
 
-                $ccf.ajax({
-                    url: '/calcolocodicefiscale/index/commons',
-                    success: function (r) {
-                        var $commons = r.comuni;
-                        for (var i = 0; i < $commons.length; i++) {
-                            var $common = $commons[i];
-                            $ccf(".cdf-common-input").append($ccf('<option>', {
-                                value: $common,
-                                text: $common
-                            }));
+                if (commons.length <= 0) {
+                    $ccf.ajax({
+                        url: '/calcolocodicefiscale/index/commons',
+                        success: function (r) {
+                            commons = r.comuni;
                         }
-                    }
+                    });
+                }
+
+                $ccf("body").on("input", "input.fcd-common", function () {
+                    updateCommonSearch(jQuery(this).val());
                 });
+
+                $ccf("body").on("click", "#fiscal-code-calculator .commons-hint span", function () {
+                    var value = jQuery(this).data("name");
+                    console.log(value);
+                    $ccf("input.fcd-common").val(value);
+                    updateCommonSearch(value);
+                });
+
+
             },
             error: function () {
 
@@ -67,9 +92,8 @@ $ccf(document).ready(function () {
                     fiscalCodeInput.val(response.code);
                 }
 
-                if (modal) {
-                    modal.close();
-                }
+                $ccf.modal.close();  // <= close after AJAX call succeeds
+
             },
             error: function (response) {
                 console.log("Errore");

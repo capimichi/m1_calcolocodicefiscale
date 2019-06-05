@@ -53,8 +53,19 @@ class Capimichi_CalcoloCodiceFiscale_IndexController extends Mage_Core_Controlle
         $xml = simplexml_load_string($content);
         $json = json_encode($xml);
         $array = json_decode($json, true);
+        
+        $status = "OK";
+        
+        if (strcasecmp($array[0], "error") == 0) {
+            $status = "error";
+        }
+        
+        if (strlen($array[0]) < 5) {
+            $status = "error";
+        }
+        
         echo json_encode([
-            'status' => (strcasecmp($array[0], "error") == 0) ? "error" : "OK",
+            'status' => $status,
             'code'   => $array[0],
         ]);
         
