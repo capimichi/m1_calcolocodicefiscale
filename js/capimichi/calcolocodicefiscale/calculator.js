@@ -6,17 +6,34 @@ $ccf(document).ready(function () {
         var hints = "";
 
         if (q.length > 2) {
+
+            var foundCommons = [];
             $ccf.each(commons, function (index, common) {
 
-                if (common.indexOf(q) >= 0) {
-                    var hintTemplate = "<span data-name='{common}'>{common}</span>";
-                    var hint = hintTemplate.replace(/{common}/g, common);
-                    hints += hint;
+                if (common.toLowerCase().indexOf(q.toLowerCase()) >= 0) {
+                    foundCommons.push({
+                        name: common,
+                        score: common.toLowerCase().indexOf(q.toLowerCase())
+                    });
                 }
             });
-        }
 
-        $ccf(".commons-hint").html(hints);
+            foundCommons.sort(function (a, b) {
+                if (a.score > b.score) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            });
+
+            $ccf.each(foundCommons, function (index, common) {
+                var hintTemplate = "<span data-name='{common}'>{common}</span>";
+                var hint = hintTemplate.replace(/{common}/g, common.name);
+                hints += hint;
+            });
+
+            $ccf(".commons-hint").html(hints);
+        }
     }
 
     var fiscalCodeInput = $ccf($ccf('#fiscal-code-calculator-open').data("fiscal-code-selector"));

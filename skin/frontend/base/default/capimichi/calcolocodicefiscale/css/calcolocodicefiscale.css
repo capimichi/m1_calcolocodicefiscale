@@ -7,11 +7,26 @@
     border-radius: 0 !important;
 }
 
+#fiscal-code-calculator .commons-hint {
+    width: 100%;
+    max-height: 250px;
+    overflow-y: scroll;
+    margin: 10px 0;
+}
+
+#fiscal-code-calculator .commons-hint {
+    background: rgba(0, 0, 0, .1);
+}
+
 #fiscal-code-calculator .commons-hint span {
-    padding: 3px;
-    background: #d6d6d6;
-    font-size: 11px;
-    margin: 0 5px 5px 0;
-    display: inline-block;
+    padding: 5px;
+    width: 100%;
+    font-size: 12px;
+    display: block;
     cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+#fiscal-code-calculator .commons-hint span:hover {
+    background: rgba(0, 0, 0, .1);
 }

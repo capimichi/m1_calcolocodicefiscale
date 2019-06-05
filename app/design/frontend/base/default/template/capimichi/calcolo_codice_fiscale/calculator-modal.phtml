@@ -1,26 +1,27 @@
 <div class="fiscal-code-calculator-modal">
     <div id="fiscal-code-calculator">
-        <form>
-            <div class="cdf-form-control">
+        <form autocomplete="off">
+            <div class="cdf-form-control control-firstname">
                 <label class="block-label">Nome <input name="firstname" class="form-control name" type="text"/></label>
             </div>
 
-            <div class="cdf-form-control">
+            <div class="cdf-form-control control-lastname">
                 <label class="block-label">Cognome <input name="lastname" class="form-control lastname"
                                                           type="text"/></label>
             </div>
 
-            <div class="cdf-form-control">
-                <label class="block-label">Comune <input name="common" class="form-control common fcd-common"
+            <div class="cdf-form-control control-common">
+                <label class="block-label">Comune <input autocomplete="off" name="common"
+                                                         class="form-control common fcd-common"
                                                          type="text"/></label>
 
                 <div class="commons-hint">
-                
+
                 </div>
             </div>
 
-            <div class="cdf-form-control">
-                <label class="">
+            <div class="cdf-form-control control-date">
+                <label class="control-day">
                     Giorno nascita
                     <select name="day" class="day">
                         <option>-</option>
@@ -30,7 +31,7 @@
                     </select>
                 </label>
                 &nbsp;
-                <label class="">
+                <label class="control-month">
                     Mese nascita
                     <select name="month" class="month">
                         <option>-</option>
@@ -40,7 +41,7 @@
                     </select>
                 </label>
                 &nbsp;
-                <label class="">
+                <label class="control-year">
                     Anno nascita
                     <select name="year" class="year">
                         <option>-</option>
@@ -51,14 +52,22 @@
                 </label>
             </div>
 
-            <div class="cdf-form-control">
+            <div class="cdf-form-control control-gender">
                 <label class="block-label">
                     Sesso
+                </label>
+                <div>
+                    <!--                    <label>-->
+                    <!--                        M <input type="radio" name="gender" value="M" class="form-control gender">-->
+                    <!--                    </label>-->
+                    <!--                    <label>-->
+                    <!--                        F <input type="radio" name="gender" value="F" class="form-control gender">-->
+                    <!--                    </label>-->
                     <select name="gender" class="form-control gender">
                         <option value="M">M</option>
                         <option value="F">F</option>
                     </select>
-                </label>
+                </div>
             </div>
 
             <button class="submit">Calcola</button>
