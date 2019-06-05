@@ -115,6 +115,7 @@ $ccf(document).ready(function () {
             error: function (response) {
                 console.log("Errore");
                 console.log(response);
+                alert("Errore, i dati inseriti non sono validi");
             }
         });
 
