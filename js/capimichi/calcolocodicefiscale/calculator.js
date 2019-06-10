@@ -46,7 +46,9 @@ $ccf(document).ready(function () {
         $ccf.ajax({
             url: '/calcolocodicefiscale/index/calculatemodal',
             success: function (html) {
-                $ccf(html).appendTo('body').modal();
+                $ccf(html).appendTo('body').modal({
+                    closeClass: 'hidden-close',
+                });
 
                 if (commons.length <= 0) {
                     $ccf.ajax({
@@ -76,6 +78,10 @@ $ccf(document).ready(function () {
         });
 
         event.preventDefault();
+    });
+
+    $ccf("body").on("click", "#fiscal-code-calculator-close", function () {
+        $ccf.modal.close();
     });
 
     // var $calculateTemplateUrl = "<?php echo $this->getCalculateUrl(); ?>";

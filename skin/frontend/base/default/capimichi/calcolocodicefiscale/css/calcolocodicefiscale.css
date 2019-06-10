@@ -30,3 +30,22 @@
 #fiscal-code-calculator .commons-hint span:hover {
     background: rgba(0, 0, 0, .1);
 }
+
+.fiscal-code-calculator-modal .close-modal {
+    display: none !important;
+}
+
+#fiscal-code-calculator-close {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}
